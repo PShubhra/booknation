@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <title>Test</title>
+    <script src="https://kit.fontawesome.com/601d448bd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <a href="/" style="text-decoration: none;"><h3>Readnation</h3></a>
+    </div>
+    <div id="body">
+        <div id="navigation-pane">
+            <div>
+                <div style="background-color: black; width: 100%; height: 20px;">
+                    <h6>Navigation</h6>
+                </div>
+                <ul>
+                    <li><a class="nav-link" href="/new">Add Book</a></li>
+                    <li>Sort by</li>
+                    <li><a class="nav-link" href="/?sortby=rating&by=DESC">Rating</a></li>
+                    <li><a class="nav-link" href="/?sortby=read_on&by=DESC">Recency</a></li>
+                    <li><a class="nav-link" href="/?sortby=title&by=ASC">Title</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="show-window">
+            <% data.forEach(item => {%>
+                
+                <div id="book" style="background-image: url('https://covers.openlibrary.org/b/<%=item.type%>/<%=item.code%>-M.jpg'); height: 210px; width: 170px;">
+                    <div class="book-overlay">
+                        <a hidden class="view book-icons" href="/view/<%=item.id%>"><i class="fa-solid fa-eye"></i></a>
+                        <a hidden class="edit book-icons" href="/edit/<%=item.id%>"><i class="fas fa-edit"></i></a>
+                        <p hidden class="rate book-icons" style="font-size: 16px; color: #B3E2A7;"><b><%=item.rating%>/10 </b><i class="fa-solid fa-star"></i></p>
+                    </div>  
+                </div>
+                
+            <%}); %>
+            
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $('.book-overlay').hover(function(){
+            $(this).addClass("mouse-on");
+            $(this).find('.book-icons').show();
+        },function(){
+            $(this).removeClass("mouse-on");
+            $(this).find('.book-icons').hide();
+        });
+    </script>
+</body>
+</html>

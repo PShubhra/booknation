@@ -1,0 +1,90 @@
+body{
+    background-color: #1A2130;
+}
+#header,h3{
+    font-family:'Merienda';
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #83B4FF;
+    text-align: center;
+}
+#body{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 6fr;
+    height: 100vh;
+}
+
+#navigation-pane{
+    align-content:start;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+h6{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 3%;
+    text-align: center;
+    color: #83B4FF;
+}
+ul{
+    list-style-type: none;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 0;
+    padding-left: 5%;
+    font-size: 16px;
+}
+.nav-link{
+    color: #83B4FF;
+}
+li{
+    color: #FDFFE2;
+    margin-bottom: 3%;
+}
+#show-window{
+    padding: 5%;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.book-overlay{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 170px;
+    height: 210px;
+}
+.mouse-on{
+    background-color: rgba(0, 0, 0,0.4);
+}
+.book-icons{
+    color: #FDFFE2;
+}
+.view{
+    grid-row: 1/1;
+    grid-column: 1/1;
+    align-content: end;
+    justify-self: end;
+    padding-bottom: 10px;
+    padding-right: 8px;
+}
+.edit{
+    grid-row: 1/1;
+    grid-column: 2/2;
+    align-content: end;
+    justify-self: start;
+    padding-bottom: 10px;
+    padding-left: 8px;
+}
+.rate{
+    grid-row: 2/2;
+    grid-column: span 2;
+    align-content: start;
+    justify-self: center;
+    padding-top: 5px;
+}

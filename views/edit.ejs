@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <title>Test</title>
+</head>
+<body>
+    <div id="header">
+        <a href="/" style="text-decoration: none;"><h3>Readnation</h3></a>
+    </div>
+    <div id="body">
+        <div id="navigation-pane">
+            <div>
+                <div style="background-color: black; width: 100%; height: 20px;">
+                    <h6>Navigation</h6>
+                </div>
+                <ul>
+                    <li><a class="nav-link" href="/">List Books</a></li>
+                    <li>Sort by</li>
+                    <li><a class="nav-link" href="/">Rating</a></li>
+                    <li><a class="nav-link" href="/">Recency</a></li>
+                    <li><a class="nav-link" href="/">Title</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="show-window">
+            <% if(locals.book){%>
+            <form action="/edit/<%=book.id%>" method="post" id="book-details-form">
+                <input type="submit" value="Submit" style="display: flex; background-color: #FD9B63;">
+            </form>
+                <textarea name="title" form="book-details-form" rows="1" cols="50" placeholder="Title"><%= book.title %></textarea>
+                <textarea name="type" form="book-details-form" rows="1" cols="20" placeholder="What type of code"><%= book.type %></textarea>
+                <textarea name="code" form="book-details-form" rows="1" cols="29" placeholder="Book code"><%= book.code %></textarea>
+                <textarea name="rating" form="book-details-form" rows="1" cols="20" placeholder="Rating out of 10"><%= book.rating %></textarea>
+                <textarea name="date" form="book-details-form" rows="1" cols="20" placeholder="YYYY/MM/DD"><%= book.read_on %></textarea>
+                <textarea name="notes" form="book-details-form" rows="30" cols="130" placeholder="Take your notes here"><%= book.notes %></textarea>
+            <%}%>
+        </div>
+    </div>
+</body>
+</html>
